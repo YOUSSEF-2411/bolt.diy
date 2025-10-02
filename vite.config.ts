@@ -1,4 +1,4 @@
-
+import { vitePlugin as remixVitePlugin } from '@remix-run/dev'; // تم إزالة cloudflareDevProxyVitePlugin
 import UnoCSS from 'unocss/vite';
 import { defineConfig, type ViteDevServer } from 'vite';
 import { nodePolyfills } from 'vite-plugin-node-polyfills';
@@ -43,7 +43,7 @@ export default defineConfig((config) => {
           return null;
         },
       },
-      config.mode !== 'test' && remixCloudflareDevProxy(),
+      // تم حذف السطر التالي: config.mode !== 'test' && remixCloudflareDevProxy(),
       remixVitePlugin({
         future: {
           v3_fetcherPersist: true,
